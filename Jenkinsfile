@@ -7,8 +7,9 @@ pipeline {
   stages {
      stage ("Build") {
        steps {
+         sh "apk add -no-cache mongodb"
          sh "chmod +x ./scripts/dropdb.sh"
-          sh "npm install"
+         sh "npm install"
        }
      }
     stage ("Test"){
